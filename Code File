@@ -1,0 +1,20 @@
+'''Convert Excel File to CSV File'''
+'''in google colab'''
+
+# First, you must upload the excel file to your google drive (MyDrive)
+
+# Import pandas library
+import pandas as pd # used to read excel file
+
+# Import excel file from Google Drive to Python Program
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Read excel file 
+dataset=pd.read_excel('/content/drive/MyDrive/teslagiya.xlsx')
+
+# Convert excel file to CSV file
+dataset.to_csv('/content/drive/MyDrive/teslagiya.csv', index = None, header=True)
+
+# Show the result
+dataset
